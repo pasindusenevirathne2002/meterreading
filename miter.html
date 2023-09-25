@@ -1,0 +1,44 @@
+<html>
+
+    <head>
+        <title>Meter Reading</title>
+    </head>
+
+    <body>
+
+        <form>
+            <b>Units:</b><input type="text" id="unit" onkeyup="result()"><br><br>
+            <b>Amount</b><p id="amount"></p>
+
+        </form>
+
+    </body>
+
+        <script type="text/javascript">
+
+            function result(){
+                var unit=document.getElementById("unit").value;
+
+                if (unit<=90){
+                    var am=unit*7.50;
+                    document.getElementById("amount").innerHTML=am;
+
+                } else if(unit<=150) {
+                    var am=90*7.50+(unit-90)*12.50;
+                    document.getElementById("amount").innerHTML=am;
+
+                } else if(unit<=180) {
+                    var am=90*7.50+60*12.50+(unit-150)*18.50;
+                    document.getElementById("amount").innerHTML=am;
+
+                } else {
+                    var am=90*7.50+60*12.50+30*18.50+(unit-180)*25;
+                    document.getElementById("amount").innerHTML=am;
+
+                }
+
+            }
+
+        </script>
+
+</html>
